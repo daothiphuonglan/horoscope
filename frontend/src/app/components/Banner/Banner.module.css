@@ -1,0 +1,155 @@
+.bannerSection {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    color: #ffffff;
+    user-select: none;
+    padding: 5rem 1.5rem;
+
+    /* Ảnh nền dải ngân hà / vũ trụ */
+    background-image: url("../../../../public/image/backgroundBanner.png");
+    /* Đổi theo đường dẫn ảnh trong project */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Lớp phủ chuyển sắc tím / đen tạo chiều sâu */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center,
+            rgba(74, 20, 140, 0.25) 0%,
+            rgba(10, 6, 20, 0.75) 70%,
+            rgba(10, 6, 20, 0.95) 100%);
+    pointer-events: none;
+}
+
+/* Các ngôi sao điểm xuyết thủ công trên banner */
+.starsContainer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+@keyframes pulseStar {
+    0% {
+        opacity: 0.35;
+        transform: scale(0.85);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+.contentWrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 52rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tiêu đề chính */
+.title {
+    font-family: serif;
+    font-style: italic;
+    font-size: 2.75rem;
+    line-height: 1.25;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.25rem 0;
+}
+
+@media (min-width: 640px) {
+    .title {
+        font-size: 3.75rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .title {
+        font-size: 4.5rem;
+    }
+}
+
+/* Dòng mô tả phụ */
+.subtitle {
+    font-size: 0.95rem;
+    color: rgba(229, 231, 235, 0.85);
+    letter-spacing: 0.02em;
+    margin: 0 0 2.25rem 0;
+    font-weight: 300;
+}
+
+@media (min-width: 640px) {
+    .subtitle {
+        font-size: 1.05rem;
+    }
+}
+
+/* Cụm nút Call to Action */
+.actionGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Nút Book a Session màu xanh mạ dạ quang */
+.btnPrimary {
+    background-color: #dcfb73;
+    color: #141d06;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.15;
+    padding: 0.5rem 0.85rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    white-space: pre-line;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(220, 251, 115, 0.2);
+    transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.btnPrimary:hover {
+    background-color: #c9ee5d;
+}
+
+.btnPrimary:active {
+    transform: scale(0.96);
+}
+
+/* Nút Weekly Horoscope dạng outline */
+.btnSecondary {
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: 0.65rem 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.btnSecondary:hover {
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btnSecondary:active {
+    transform: scale(0.98);
+}

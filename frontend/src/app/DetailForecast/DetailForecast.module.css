@@ -1,0 +1,33 @@
+.section {
+  padding: 48px 20px;
+}
+
+.card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 40px rgb(47 35 76 / 10%);
+}
+
+.title {
+  margin: 0 0 24px;
+  text-align: center;
+}
+
+.reading {
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.backButton {
+  display: block;
+  margin: 28px auto 0;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: #6c4eb6;
+  cursor: pointer;
+}

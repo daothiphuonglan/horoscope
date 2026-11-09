@@ -1,0 +1,40 @@
+.button {
+    padding: 20px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.primary {
+    background-color: DBF77E;
+    color: #020013;
+}
+
+.secondary {
+    background-color: #E2E2E2;
+    color: #FFFFFF;
+    border-color: #DBF77E;
+}
+
+.md {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 20px;
+
+}
+
+.lg {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.sm {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.disabled {
+    background-color: #667085;
+    color: white;
+}

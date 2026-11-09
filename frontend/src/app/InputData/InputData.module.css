@@ -1,0 +1,197 @@
+/* ══════════════════════════════════════════════════════════
+   InputData Section – Cosmic / Celestial Theme
+   Matches header (#0b0713), banner (galaxy/purple) & accent (#dcfb73)
+   ══════════════════════════════════════════════════════════ */
+
+/* ─── Section background ─────────────────────────────────── */
+.section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5rem 1.5rem;
+    background: linear-gradient(175deg,
+            #0b0713 0%,
+            #120d1f 35%,
+            #1a1230 60%,
+            #0f0a1a 100%);
+    overflow: hidden;
+}
+
+/* Subtle radial glow behind the card */
+.section::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle,
+            rgba(139, 92, 246, 0.12) 0%,
+            rgba(139, 92, 246, 0.04) 40%,
+            transparent 70%);
+    pointer-events: none;
+}
+
+/* Decorative floating orbs */
+.section::after {
+    content: "";
+    position: absolute;
+    top: 12%;
+    right: 8%;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(219, 247, 126, 0.06) 0%,
+            transparent 70%);
+    pointer-events: none;
+    animation: floatOrb 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-20px, 15px);
+    }
+}
+
+/* ─── Glassmorphism card ─────────────────────────────────── */
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    padding: 3rem 2.5rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    z-index: 1;
+}
+
+/* Subtle top-border glow */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(219, 247, 126, 0.35),
+            rgba(139, 92, 246, 0.3),
+            transparent);
+    border-radius: 1px;
+}
+
+/* ─── Section header ─────────────────────────────────────── */
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.sectionIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(219, 247, 126, 0.1));
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    margin-bottom: 1rem;
+    color: #dcfb73;
+}
+
+.sectionTitle {
+    font-family: serif;
+    font-style: italic;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+}
+
+.sectionSubtitle {
+    font-size: 0.875rem;
+    color: rgba(229, 231, 235, 0.55);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    margin: 0;
+}
+
+/* ─── Form fields container ──────────────────────────────── */
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ─── Submit button override ─────────────────────────────── */
+.submitBtn {
+    margin-top: 0.75rem;
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #0b0713;
+    background: linear-gradient(135deg, #dcfb73 0%, #c9ee5d 100%);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 12px rgba(219, 247, 126, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.submitBtn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.submitBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(219, 247, 126, 0.35);
+}
+
+.submitBtn:hover::before {
+    opacity: 1;
+}
+
+.submitBtn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .card {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+    }
+
+    .sectionTitle {
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,259 @@
+.footer {
+    position: relative;
+    width: 100%;
+    background-color: #0a0614;
+    color: #ffffff;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    user-select: none;
+}
+
+/* Ánh tím phát sáng mờ ảo ở đáy */
+.radialGlow {
+    pointer-events: none;
+    position: absolute;
+    bottom: -6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: 320px;
+    border-radius: 9999px;
+    background-color: rgba(74, 20, 140, 0.4);
+    filter: blur(130px);
+    opacity: 0.8;
+}
+
+.container {
+    position: relative;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+/* Grid layout */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: 3fr 2fr 3fr 2fr 2fr;
+        gap: 2rem;
+    }
+}
+
+/* Cột 1: Brand & Socials */
+.brandCol {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logoIcon {
+    width: 2rem;
+    height: 2rem;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.logoText {
+    font-family: serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.025em;
+    color: #ffffff;
+}
+
+.description {
+    font-size: 0.875rem;
+    color: rgba(209, 213, 219, 0.8);
+    line-height: 1.625;
+    max-width: 20rem;
+    font-weight: 300;
+}
+
+.socialList {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.socialLink {
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.socialLink:hover {
+    color: #d4ff68;
+}
+
+.socialIconFb,
+.socialIconIg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.socialIconX {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Style tiêu đề các cột */
+.columnTitle {
+    font-family: serif;
+    font-size: 1.125rem;
+    letter-spacing: 0.025em;
+    color: #e2f185;
+    margin-bottom: 1rem;
+}
+
+/* Danh sách liên kết chung */
+.linkList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    font-size: 0.875rem;
+    color: #d1d5db;
+    font-weight: 300;
+}
+
+.linkItem a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.linkItem a:hover {
+    color: #ffffff;
+}
+
+/* Cột thông tin liên hệ */
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    font-size: 0.875rem;
+    color: #d1d5db;
+    font-weight: 300;
+}
+
+.contactInfo p {
+    margin: 0;
+}
+
+.contactInfo a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.contactInfo a:hover {
+    color: #ffffff;
+}
+
+.address {
+    line-height: 1.375;
+}
+
+/* Cột form đăng ký */
+.newsletterCol {
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 24rem;
+}
+
+.input {
+    width: 100%;
+    background-color: rgba(23, 14, 40, 0.7);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 0.5rem;
+    padding: 0.625rem 0.875rem;
+    font-size: 0.875rem;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.input::placeholder {
+    color: #9ca3af;
+}
+
+.input:focus {
+    border-color: #d4ff68;
+    box-shadow: 0 0 0 1px #d4ff68;
+}
+
+.submitBtn {
+    background-color: #dcfb73;
+    color: #141d06;
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1.25;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.625rem 0.75rem;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: pre-line;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.submitBtn:hover {
+    background-color: #c9ee5d;
+}
+
+.submitBtn:active {
+    transform: scale(0.95);
+}

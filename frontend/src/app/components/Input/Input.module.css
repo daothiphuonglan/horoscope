@@ -1,0 +1,714 @@
+/* ══════════════════════════════════════════════════════════
+   Container chung
+   ══════════════════════════════════════════════════════════ */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.containerError {}
+
+/* ══════════════════════════════════════════════════════════
+   Label
+   ══════════════════════════════════════════════════════════ */
+.label {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(229, 231, 235, 0.75);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.required {
+    color: #f87171;
+    margin-left: 2px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   Input wrapper (cho icon bên trái / nút bên phải)
+   ══════════════════════════════════════════════════════════ */
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 14px;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    z-index: 1;
+    transition: color 0.25s;
+}
+
+.inputWrapper:focus-within .inputIcon {
+    color: #dcfb73;
+}
+
+/* ══════════════════════════════════════════════════════════
+   Input cơ bản (text, number, email, tel, url, password, date)
+   ══════════════════════════════════════════════════════════ */
+.input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+}
+
+.inputWithIcon {
+    padding-left: 42px;
+}
+
+.inputWithToggle {
+    padding-right: 44px;
+}
+
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.input:hover:not(:disabled) {
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+.input:focus {
+    border-color: rgba(219, 247, 126, 0.5);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(219, 247, 126, 0.08),
+                0 0 20px rgba(139, 92, 246, 0.06);
+}
+
+.input:disabled {
+    background-color: rgba(255, 255, 255, 0.02);
+    color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.05);
+    cursor: not-allowed;
+}
+
+.input.hasError {
+    border-color: rgba(248, 113, 113, 0.6);
+    background-color: rgba(248, 113, 113, 0.06);
+}
+
+.input.hasError:focus {
+    border-color: rgba(248, 113, 113, 0.7);
+    box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.1);
+}
+
+/* ══════════════════════════════════════════════════════════
+   Password toggle
+   ══════════════════════════════════════════════════════════ */
+.passwordToggle {
+    position: absolute;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.passwordToggle:hover {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ══════════════════════════════════════════════════════════
+   Date input
+   ══════════════════════════════════════════════════════════ */
+.dateInput {
+    cursor: pointer;
+    color-scheme: dark;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.4;
+    filter: invert(1);
+    transition: opacity 0.2s;
+}
+
+.dateInput::-webkit-calendar-picker-indicator:hover {
+    opacity: 0.8;
+}
+
+/* ══════════════════════════════════════════════════════════
+   Radio
+   ══════════════════════════════════════════════════════════ */
+.radioGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.radioLabel:hover {
+    border-color: rgba(139, 92, 246, 0.35);
+    background-color: rgba(139, 92, 246, 0.08);
+}
+
+.radioLabelChecked {
+    border-color: rgba(219, 247, 126, 0.4);
+    background-color: rgba(219, 247, 126, 0.06);
+    box-shadow: 0 0 0 1px rgba(219, 247, 126, 0.1);
+}
+
+.radioLabelDisabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.radioLabelDisabled:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.radioInput {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.radioCustom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+}
+
+.radioInput:checked + .radioCustom {
+    border-color: #dcfb73;
+    background-color: #dcfb73;
+}
+
+.radioDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(0);
+}
+
+.radioInput:checked + .radioCustom .radioDot {
+    background-color: #0b0713;
+    transform: scale(1);
+}
+
+.radioText {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+/* ══════════════════════════════════════════════════════════
+   Checkbox
+   ══════════════════════════════════════════════════════════ */
+.checkboxGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checkboxSingle,
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.checkboxSingle:hover,
+.checkboxLabel:hover {
+    border-color: rgba(139, 92, 246, 0.35);
+    background-color: rgba(139, 92, 246, 0.08);
+}
+
+.checkboxLabelDisabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.checkboxInput {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.checkboxCustom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+    color: transparent;
+}
+
+.checkboxInput:checked + .checkboxCustom {
+    border-color: #dcfb73;
+    background-color: #dcfb73;
+    color: #0b0713;
+}
+
+.checkboxText {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+/* ══════════════════════════════════════════════════════════
+   Textarea
+   ══════════════════════════════════════════════════════════ */
+.textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    outline: none;
+    box-sizing: border-box;
+    resize: vertical;
+    font-family: inherit;
+    min-height: 80px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.textarea::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.textarea:hover:not(:disabled) {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.textarea:focus {
+    border-color: rgba(219, 247, 126, 0.5);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(219, 247, 126, 0.08);
+}
+
+.textarea:disabled {
+    background-color: rgba(255, 255, 255, 0.02);
+    color: rgba(255, 255, 255, 0.2);
+    cursor: not-allowed;
+}
+
+.textarea.hasError {
+    border-color: rgba(248, 113, 113, 0.6);
+    background-color: rgba(248, 113, 113, 0.06);
+}
+
+.textarea.hasError:focus {
+    border-color: rgba(248, 113, 113, 0.7);
+    box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.1);
+}
+
+/* ══════════════════════════════════════════════════════════
+   Select (Dropdown)
+   ══════════════════════════════════════════════════════════ */
+.selectWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.select {
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    outline: none;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.select:hover:not(:disabled) {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.select:focus {
+    border-color: rgba(219, 247, 126, 0.5);
+    box-shadow: 0 0 0 3px rgba(219, 247, 126, 0.08);
+}
+
+.select:disabled {
+    background-color: rgba(255, 255, 255, 0.02);
+    color: rgba(255, 255, 255, 0.2);
+    cursor: not-allowed;
+}
+
+.select.hasError {
+    border-color: rgba(248, 113, 113, 0.6);
+    background-color: rgba(248, 113, 113, 0.06);
+}
+
+.selectArrow {
+    position: absolute;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    transition: color 0.25s, transform 0.25s;
+}
+
+.selectWrapper:focus-within .selectArrow {
+    color: #dcfb73;
+}
+
+/* ══════════════════════════════════════════════════════════
+   Color Picker
+   ══════════════════════════════════════════════════════════ */
+.colorWrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.colorWrapper:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.colorWrapper:focus-within {
+    border-color: rgba(219, 247, 126, 0.5);
+    box-shadow: 0 0 0 3px rgba(219, 247, 126, 0.08);
+}
+
+.colorInput {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.colorPreview {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.2s;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.colorPreview:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.colorValue {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    letter-spacing: 0.02em;
+}
+
+/* ══════════════════════════════════════════════════════════
+   File Upload
+   ══════════════════════════════════════════════════════════ */
+.fileInput {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.fileDropZone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 20px;
+    border: 2px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    background-color: rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fileDropZone:hover {
+    border-color: rgba(139, 92, 246, 0.35);
+    background-color: rgba(139, 92, 246, 0.06);
+}
+
+.fileDropZoneActive {
+    border-color: rgba(219, 247, 126, 0.5);
+    background-color: rgba(219, 247, 126, 0.06);
+    transform: scale(1.01);
+}
+
+.fileDropZoneDisabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.fileDropZoneDisabled:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.fileContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.fileIcon {
+    color: rgba(255, 255, 255, 0.3);
+    transition: color 0.25s;
+}
+
+.fileDropZone:hover .fileIcon {
+    color: rgba(139, 92, 246, 0.7);
+}
+
+.fileDropZoneActive .fileIcon {
+    color: #dcfb73;
+}
+
+.fileText {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+.fileBrowse {
+    color: #dcfb73;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.fileHint {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0;
+}
+
+.fileList {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.fileItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 8px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.fileName {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.fileSize {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════════════════════
+   Range Slider
+   ══════════════════════════════════════════════════════════ */
+.rangeWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 4px 0;
+}
+
+.rangeTrack {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow: visible;
+}
+
+.rangeFill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #8b5cf6, #dcfb73);
+    pointer-events: none;
+    transition: width 0.1s ease;
+}
+
+.rangeInput {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    transform: translateY(-50%);
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    margin: 0;
+}
+
+.rangeInput::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #dcfb73;
+    border: 3px solid #0b0713;
+    box-shadow: 0 2px 8px rgba(219, 247, 126, 0.3);
+    cursor: grab;
+    transition: all 0.15s ease;
+}
+
+.rangeInput::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    box-shadow: 0 3px 14px rgba(219, 247, 126, 0.45);
+}
+
+.rangeInput::-webkit-slider-thumb:active {
+    cursor: grabbing;
+    transform: scale(1.05);
+}
+
+.rangeInput::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #dcfb73;
+    border: 3px solid #0b0713;
+    box-shadow: 0 2px 8px rgba(219, 247, 126, 0.3);
+    cursor: grab;
+}
+
+.rangeInput:disabled {
+    cursor: not-allowed;
+}
+
+.rangeInput:disabled::-webkit-slider-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.1);
+    cursor: not-allowed;
+}
+
+.rangeInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rangeMin,
+.rangeMax {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+}
+
+.rangeValue {
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #dcfb73, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ══════════════════════════════════════════════════════════
+   Error message
+   ══════════════════════════════════════════════════════════ */
+.errorMessage {
+    font-size: 12px;
+    font-weight: 500;
+    color: #f87171;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}

@@ -1,0 +1,177 @@
+.section {
+    width: 100%;
+    background-color: #03010b;
+    /* Nền đen ngả tím rất đậm */
+    color: #ffffff;
+    padding: 80px 24px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 72px;
+    gap: 24px;
+}
+
+.headerLeft {
+    max-width: 700px;
+}
+
+.subTitle {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #daf57c;
+    /* Tông màu vàng chanh/neon */
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.mainTitle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 40px;
+    line-height: 1.25;
+    font-weight: 400;
+    margin: 0;
+}
+
+.italicHighlight {
+    font-style: italic;
+    font-weight: 500;
+}
+
+.seeAllBtn {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 12px 28px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.seeAllBtn:hover {
+    background-color: #ffffff;
+    color: #03010b;
+    border-color: #ffffff;
+}
+
+/* List Items */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* Đảo chiều nội dung và hình ảnh cho item chẵn (02) */
+.reversed {
+    flex-direction: row-reverse;
+}
+
+.contentBlock {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+}
+
+.idNumber {
+    font-size: 14px;
+    font-weight: 600;
+    color: #daf57c;
+    line-height: 1.8;
+}
+
+.textGroup {
+    max-width: 420px;
+}
+
+.itemTitle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 26px;
+    font-weight: 500;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.3px;
+}
+
+.itemDesc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+}
+
+/* Image styling */
+.imageBlock {
+    flex: 1;
+    max-width: 540px;
+    height: 230px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.imageBlock:hover .image {
+    transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item,
+    .reversed {
+        flex-direction: column-reverse;
+        gap: 32px;
+    }
+
+    .contentBlock {
+        width: 100%;
+        gap: 24px;
+    }
+
+    .textGroup {
+        max-width: 100%;
+    }
+
+    .imageBlock {
+        max-width: 100%;
+        width: 100%;
+        height: 260px;
+    }
+
+    .mainTitle {
+        font-size: 32px;
+    }
+}

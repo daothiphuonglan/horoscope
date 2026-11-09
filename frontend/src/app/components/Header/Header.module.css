@@ -1,0 +1,94 @@
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    padding: 0 48px;
+    background-color: #0b0713;
+    /* Tông nền tối/tím than đậm */
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Logo */
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.logoIcon {
+    width: 32px;
+    height: 32px;
+    color: #ffffff;
+}
+
+.logoText {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: -0.5px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.navLink {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.navLink:hover {
+    color: #ffffff;
+}
+
+.dropdownIcon {
+    font-size: 10px;
+    line-height: 1;
+}
+
+/* Tab nút 'Reservation' ở góc phải rủ xuống */
+.reservationBtn {
+    position: absolute;
+    top: 0;
+    right: 48px;
+    width: 44px;
+    background-color: #daf57c;
+    /* Màu xanh neon chanh (lime yellow) */
+    color: #121212;
+    border: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 12px 6px 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: 0.2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.reservationBtn:hover {
+    filter: brightness(1.05);
+    transform: translateY(2px);
+}
